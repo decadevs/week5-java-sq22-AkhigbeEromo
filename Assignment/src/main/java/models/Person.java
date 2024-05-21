@@ -24,27 +24,39 @@ public class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
     public void setAge(int age) {
         this.age = age;
-    }
-
-    public Gender getGender() {
-        return gender;
     }
 
     public void setGender(Gender gender) {
         this.gender = gender;
     }
 
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+
+    public Gender getGender() {
+        return gender;
+    }
+
+
     public Role getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
-        this.role = role;
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
+                ", role=" + role +
+                '}';
     }
 }

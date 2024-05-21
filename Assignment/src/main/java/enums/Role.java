@@ -1,5 +1,5 @@
 package enums;
 
 public enum Role {
-    TEACHER,STUDENT
+    TEACHER,JUNIOR_STUDENT,SENIOR_STUDENT
 }
