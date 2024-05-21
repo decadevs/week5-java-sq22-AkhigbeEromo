@@ -9,7 +9,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
 
     @Override
-    public Books checkBookIsRemaining(String nameOfBook) {
+    public Books checkBook(String nameOfBook) {
         List<Books> books = new ArrayList<>();
         books.add(new Books(1, "Things fall Apart", "Chinua Achebe", 1990));
         books.add(new Books(2, "the gods are mad", "Felix Achebe", 1996));

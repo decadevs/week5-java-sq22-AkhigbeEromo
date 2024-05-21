@@ -4,10 +4,10 @@ import enums.Gender;
 import enums.Role;
 
 public class Person {
-    private String name;
-    private int age;
-    private Gender gender;
-    private Role role;
+    private final String name;
+    private final int age;
+    private final Gender gender;
+    private final Role role;
 
     public Person(String name, int age, Gender gender, Role role) {
         this.name = name;
@@ -20,26 +20,9 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public void setGender(Gender gender) {
-        this.gender = gender;
-    }
-
-    public void setRole(Role role) {
-        this.role = role;
-    }
-
     public int getAge() {
         return age;
     }
-
 
     public Gender getGender() {
         return gender;

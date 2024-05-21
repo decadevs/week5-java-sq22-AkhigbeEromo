@@ -21,7 +21,7 @@ public class LibraryServiceImpl implements LibraryService {
 
         Person borrower = queue.poll();
         assert borrower != null;
-        System.out.println(borrower.getName() +" has borrowed the book with the following details: " + bookService.checkBookIsRemaining(book));
+        System.out.println(borrower.getName() +" has borrowed the book with the following details: " + bookService.checkBook(book));
 
         return borrower;
     }
@@ -32,7 +32,7 @@ public class LibraryServiceImpl implements LibraryService {
         list.add(new Person("David Abayomi", 25, Gender.MALE,Role.SENIOR_STUDENT));
         list.add(new Person("Veronica Adason", 30, Gender.FEMALE, Role.JUNIOR_STUDENT));
         list.add(new Person("Eromosele Akhigbe",23, Gender.MALE,Role.TEACHER));
-        System.out.println(list.get(0).getName()+ " has borrowed the book with the following details: "+ bookService.checkBookIsRemaining(book) );
+        System.out.println(list.get(0).getName()+ " has borrowed the book with the following details: "+ bookService.checkBook(book) );
        return list.get(0);
     }
 }

@@ -10,7 +10,7 @@ class BookServiceImplTest {
     @Test
     void checkBookIsRemaining_BookExists() {
         String bookName = "Things fall Apart";
-        Books result = bookService.checkBookIsRemaining(bookName);
+        Books result = bookService.checkBook(bookName);
         assertNotNull(result);
         assertEquals(bookName, result.getName());
         assertEquals("Chinua Achebe", result.getAuthor());
@@ -19,7 +19,7 @@ class BookServiceImplTest {
     @Test
     void testCheckBookIsRemaining_BookDoesNotExist() {
         String bookName = "Nonexistent Book";
-        Books result = bookService.checkBookIsRemaining(bookName);
+        Books result = bookService.checkBook(bookName);
         assertNull(result);
     }
 }

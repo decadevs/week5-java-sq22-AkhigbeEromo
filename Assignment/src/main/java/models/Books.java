@@ -1,10 +1,10 @@
 package models;
 
 public class Books {
-    private int id;
-    private String name;
-    private String author;
-    private int yearPublished;
+    private final int id;
+    private final String name;
+    private final String author;
+    private final int yearPublished;
 
     public Books(int id, String name, String author, int yearPublished) {
         this.id = id;
