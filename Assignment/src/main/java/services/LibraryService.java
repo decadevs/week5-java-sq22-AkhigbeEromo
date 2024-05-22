@@ -1,8 +1,13 @@
 package services;
 
+import models.Book;
 import models.Person;
 
+import java.util.List;
+
 public interface LibraryService {
-    Person giveBookByPriority(String nameOfBook);
-    Person giveBookByOrder(String nameOfBook);
+    String addLibraryUsersToPriorityQueue(Person user);
+    String addLibraryUsersToQueue(Person user);
+    String giveBookByPriority(String nameOfBook, List<Book>books);
+    String giveBookByOrder(String nameOfBook,List<Book>books);
 }

@@ -1,7 +1,10 @@
 package services;
 
-import models.Books;
+import models.Book;
+
+import java.util.List;
 
 public interface BookService {
-    Books checkBook(String nameOfBook);
+
+    Book checkBook(String nameOfBook, List<Book>books);
 }

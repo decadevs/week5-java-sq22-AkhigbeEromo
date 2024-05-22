@@ -1,16 +1,18 @@
 package models;
 
-public class Books {
+public class Book {
     private final int id;
     private final String name;
     private final String author;
     private final int yearPublished;
+    private int numberOfCopies;
 
-    public Books(int id, String name, String author, int yearPublished) {
+    public Book(int id, String name, String author, int yearPublished, int numberOfCopies) {
         this.id = id;
         this.name = name;
         this.author = author;
         this.yearPublished = yearPublished;
+        this.numberOfCopies = numberOfCopies;
     }
 
     public String getName() {
@@ -23,6 +25,13 @@ public class Books {
 
     public String getAuthor() {
         return author;
+    }
+
+    public int getNumberOfCopies() {
+        return numberOfCopies;
+    }
+    public void setNumberOfCopies(int  numberOfCopies){
+        this.numberOfCopies =numberOfCopies;
     }
 
     public int getYearPublished() {

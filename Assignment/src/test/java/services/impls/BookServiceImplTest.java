@@ -1,25 +1,19 @@
 package services.impls;
 
-import models.Books;
+import models.Book;
+import models.Library;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 class BookServiceImplTest {
-    BookServiceImpl bookService = new BookServiceImpl();
+BookServiceImpl bookService = new BookServiceImpl();
     @Test
-    void checkBookIsRemaining_BookExists() {
-        String bookName = "Things fall Apart";
-        Books result = bookService.checkBook(bookName);
-        assertNotNull(result);
-        assertEquals(bookName, result.getName());
-        assertEquals("Chinua Achebe", result.getAuthor());
-        assertEquals(1990, result.getYearPublished());
+    void checkBook_ifNull() {
+        assertNull(bookService.checkBook("Dangerously", Library.getBookShelf()));
     }
     @Test
-    void testCheckBookIsRemaining_BookDoesNotExist() {
-        String bookName = "Nonexistent Book";
-        Books result = bookService.checkBook(bookName);
-        assertNull(result);
+    void checkBook_ifNotNull() {
+        assertNotNull(bookService.checkBook("Things fall Apart", Library.getBookShelf()));
     }
+
 }

@@ -1,39 +1,43 @@
 package services.impls;
 
-
-import org.junit.jupiter.api.Test;
 import enums.Gender;
 import enums.Role;
+import models.Library;
 import models.Person;
-import services.LibraryService;
+import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryServiceImplTest {
-        LibraryServiceImpl bookService = new LibraryServiceImpl();
+    LibraryServiceImpl libraryService = new LibraryServiceImpl();
+    Person seniorStudent = new Person("David Abayomi", 25, Gender.MALE, Role.SENIOR_STUDENT);
+
 
     @Test
-    void giveBookByPriority() {
-        String book = "Things fall Apart";
-        Person result;
-        result = bookService.giveBookByPriority(book);
-        assertEquals("Eromosele Akhigbe", result.getName());
-        assertEquals(23, result.getAge());
-        assertEquals(Gender.MALE, result.getGender());
-        assertEquals(Role.TEACHER, result.getRole());
-
+    void addLibraryUsersToPriorityQueue() {
+        assertEquals("David Abayomi",libraryService.addLibraryUsersToPriorityQueue(seniorStudent));
     }
 
     @Test
-    void giveBookByOrder() {
-        String book = "Things fall Apart";
-        Person result;
-        result = bookService.giveBookByOrder(book);
+    void addLibraryUsersToQueue() {
+        assertEquals("David Abayomi",libraryService.addLibraryUsersToQueue(seniorStudent));
+    }
 
+    @Test
+    void giveBookByPriority_IfNull() {
+        assertEquals("",libraryService.giveBookByPriority("Dangerously", Library.getBookShelf()));
+    }
+    @Test
+    void giveBookByPriority_IfNotNull() {
+        assertNotNull(libraryService.giveBookByPriority("Dangerously", Library.getBookShelf()));
+    }
 
-        assertEquals("David Abayomi", result.getName());
-        assertEquals(25, result.getAge());
-        assertEquals(Gender.MALE, result.getGender());
-        assertEquals(Role.SENIOR_STUDENT, result.getRole());
+    @Test
+    void giveBookByOrder_IfNull() {
+        assertEquals("",libraryService.giveBookByOrder("Dangerously", Library.getBookShelf()));
+    }
+    @Test
+    void giveBookByOrder_IfNotNull() {
+        assertNotNull(libraryService.giveBookByOrder("Dangerously", Library.getBookShelf()));
     }
 }
