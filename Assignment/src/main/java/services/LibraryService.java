@@ -10,4 +10,5 @@ public interface LibraryService {
     String addLibraryUsersToQueue(Person user);
     String giveBookByPriority(String nameOfBook, List<Book>books);
     String giveBookByOrder(String nameOfBook,List<Book>books);
+    String returnBook(String nameOfBook, List<Book>books, Person user);
 }

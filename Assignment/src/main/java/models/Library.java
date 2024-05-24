@@ -11,9 +11,9 @@ public class Library {
 
     public static List<Person> libraryUsersOnQueue= new ArrayList<>();
     public static PriorityQueue<Person> libraryUsersOnPriorityQueue =new PriorityQueue<>(new RoleComparatorImpl());
+    public  static List<Book> bookshelf = new ArrayList<>();
 
     public static List<Book> getBookShelf(){
-        List<Book> bookshelf = new ArrayList<>();
         bookshelf.add(new Book(1, "Things fall Apart", "Chinua Achebe", 1990,1));
         bookshelf.add(new Book(2, "the gods are mad", "Felix Achebe", 1996,2));
         bookshelf.add(new Book(3, "Beautiful ones are not yet born", "Caro White", 2020,5));

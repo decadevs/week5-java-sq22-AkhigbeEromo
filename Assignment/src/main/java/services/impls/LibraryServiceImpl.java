@@ -51,4 +51,17 @@ public class LibraryServiceImpl implements LibraryService {
         }
         return result;
     }
+
+    @Override
+    public String returnBook(String nameOfBook, List<Book> books, Person user) {
+        for(Book b: books){
+            if(nameOfBook.equals(b.getName())){
+                b.setNumberOfCopies(b.getNumberOfCopies()+1);
+                System.out.println(user.getName()+ " has returned " +b.getName() +" to the Library");
+                return nameOfBook;
+            }
+        }
+
+        return nameOfBook+ "does not belong to this library";
+    }
 }
